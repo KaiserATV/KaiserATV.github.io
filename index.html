@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Wo wollen wir essen? </title>
-    <script src="JQUERY/JQUERY/JQuery.js"></script>
+    <script src="JQUERY/JQUERY/JQUERY.js"></script>
     <script src="JQUERY/JQUERYUI/jquery-ui.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/TableDnD/0.9.1/jquery.tablednd.js" integrity="sha256-d3rtug+Hg1GZPB7Y/yTcRixO/wlI78+2m08tosoRn7A=" crossorigin="anonymous"></script>
   </head>
@@ -25,12 +25,10 @@
   <table onchange="nummern()" id="table-1" cellspacing="0" cellpadding="2" >
   </table>
 </div>
-<div id="transkreis1">
-<label class="label" for="eingabe">Finde es heraus!</label>
-<input style="opacity: 0;" accept=".csv" name="eingabe" multiple="false" id="eingabe" type="file" onchange="trans2(),setTimeout(lesen(this),2000)"/>
-</div>
-
 <label id="label2" for="einloggen">Einloggen</label>
+<label id="label1" for="eingabe">Finde es heraus!</label>
+<input style="opacity: 0;" accept=".csv" name="eingabe" multiple="false" id="eingabe" type="file" onchange="trans2(),setTimeout(lesen(this),2000)"/>
+
 <button id="einloggen" name="einloggen" style="display: none;" onclick="vergleichen()"></button>
 <div id="dialog" style="display: none;" title="Auswertung">
   <p>Hier siehst du die Übereinstimmung deiner Reihenfolge mit meiner:</p>
@@ -105,7 +103,7 @@ function trans2(){
   document.getElementById("helper").style.transform = "scale(0)";
   document.getElementById("body").style.background = "linear-gradient(to right, #052646 20%,#021c35, #052646 80%)";
   document.getElementById("eingabe").style.display = "none";
-  document.getElementsByClassName("label")[0].style.display ="none";
+  document.getElementById("label1").style.display ="none";
   
   const helper2 = document.getElementById("helper2");
   helper2.style="display: block;posittion: absolute; height: 100%; width: 100%; z-index: 2; background-color: black;";
@@ -117,13 +115,7 @@ function trans2(){
     document.getElementById("label2").style.display = "block";
     document.getElementById("label2").style.animation = "fadeIn 2s";
   },3000); 
-
-
-  },3000);
-  
-
-
-
+ },3000);
 }
 
 
@@ -131,8 +123,8 @@ function verschw(){
     document.getElementById("rad").style.display = "none";
     document.getElementById("grad1").style.display = "none";
     document.getElementById("helper").style = "";
-    document.getElementsByClassName("label")[0].style.visibility = "visible";
-    document.getElementsByClassName("label")[0].style.animation = "fadeIn 1s";
+    document.getElementById("label1").style.visibility = "visible";
+    document.getElementById("label1").style.animation = "fadeIn 1s";
 
 }
 function nummern(){
@@ -239,8 +231,6 @@ function schreiben(text){
 
 
 
-
-
 function vergleichen(){
   var current;
   var index = 0;
@@ -299,15 +289,15 @@ document.getElementById("dialog").style.display = "block";
 
 
 
-$("#dialog" ).dialog({
+$( "#dialog" ).dialog({
   closeOnEscape: true,
   closeText: "x",
   draggable: true,
-  postion: {my:"center top", at: "center", of: ".wrapper"},
   resizable: true,
   show: 500,
   modal:true
 });
+
 
 
 

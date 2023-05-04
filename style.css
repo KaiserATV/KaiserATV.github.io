@@ -107,7 +107,11 @@ html{
     height: 0;
     width: 0;
 }
-.label{
+#label1{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
     color: #FFFFFF;
     border: 1px solid black;
     place-self: center;
@@ -121,7 +125,7 @@ html{
     transition: --Farbe3 2s, --Farbe4 2s;
     --Farbe3: #4947d8;
     --Farbe4: #3230c4;
-}.label:hover{
+}#label1:hover{
     padding-top: 11px;
     --Farbe3: #3230c4;
     --Farbe4: #4947d8;
@@ -171,13 +175,6 @@ table,th,td{
     cursor: move;
 }
 
-#transkreis1{
-    display: grid;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-}
 input{
     height: 0;
     width: 0;
@@ -200,11 +197,15 @@ a{
     display: none;
     height: 20px;
     width: 6%;
+    margin-left: 47%;
     position: absolute;
-    bottom: 10%;
-    left: 50%;
-    z-index: 5;
-}.confetti-container {
+    bottom: 1%;
+}
+
+
+
+
+.confetti-container {
     user-select: none;
     z-index: 10;
   }
@@ -213,9 +214,6 @@ a{
     left: 0;
     right: 0;
     display: flex;
-    /* width: 600px; */
-    /* height: 600px; */
-    /* overflow: hidden; */
   }
   
   .confetti .square {
